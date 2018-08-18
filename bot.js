@@ -345,7 +345,7 @@ if (message.content.startsWith(prefix + "uptime")) {
     message.channel.send("`" + `${days} days, ${hours} hrs, ${minutes} min , ${seconds} sec` + "`");
 
 
-}
+})
 });
 
 
