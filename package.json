@@ -2,9 +2,9 @@
   "name": "Test",
   "description": "Test",
   "version": "0.0.0",
-  "main": "mario.js",
+  "main": "bot.js",
   "scripts": {
-    "start": "node mario.js"
+    "start": "node bot.js"
   },
   "dependencies": {
    "discord.js": "^11.3.2",
