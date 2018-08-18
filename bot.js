@@ -342,6 +342,4 @@ if (message.content.startsWith(prefix + "uptime")) {
 }
 });
 
-
-
-  client.login(process.env.BOT_TOKEN);
+client.login(process.env.BOT_TOKEN);
