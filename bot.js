@@ -1,16 +1,19 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const perifx = "$";
+const prefix = "$";
 client.on('ready', () => {
-console.log('I am ready!');
+    console.log('I am ready!');
 });
 
 client.on('message', message => {
     if (message.content === 'ping') {
-        message.reply('pong');
+        message.reply('pong!');
       }
 });
 
+
+
+client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
     console.log(`in ${client.guilds.size} servers `)
     console.log(`[Codes] ${client.users.size}`)
@@ -166,7 +169,7 @@ const Za7f = [
     "**اذهب الى واحد ماتعرفه وقل له انا كيوت وابي بوسه**.",
     "**تتصل على الوالده  و تقول لها خطفت شخص**.",
     "** تتصل على الوالده  و تقول لها تزوجت با سر**.",
-    "**تصل على الوالده  و تقول لها  احب وحده**.",
+    "**����تصل على الوالده  و تقول لها  احب وحده**.",
       "**تتصل على شرطي تقول له عندكم مطافي**.",
       "**خلاص سامحتك**.",
       "** تصيح في الشارع انا  مجنوون**.",
@@ -181,7 +184,7 @@ const Za7f = [
   var embed = new Discord.RichEmbed()
   .setColor('RANDOM')
    .setThumbnail(message.author.avatarURL)
- .addField('xHexon Bot' ,
+ .addField('Mario World' ,
   `${Za7f[Math.floor(Math.random() * Za7f.length)]}`)
   message.channel.sendEmbed(embed);
   console.log('[38ab] Send By: ' + message.author.username)
@@ -284,7 +287,7 @@ const Love = [  "**احبك / عدد قطرات المـــطر والشجر و
   var embed = new Discord.RichEmbed()
   .setColor('RANDOM')
    .setThumbnail(message.author.avatarURL)
- .addField('xHexon Bot' ,
+ .addField('Mario World' ,
   `${Love[Math.floor(Math.random() * Love.length)]}`)
   message.channel.sendEmbed(embed);
   console.log('[id] Send By: ' + message.author.username)
@@ -292,6 +295,54 @@ const Love = [  "**احبك / عدد قطرات المـــطر والشجر و
 });
 
 
-// THIS  MUST  BE  THIS  WAY
 
-client.login(process.env.BOT_TOKEN);//where BOT_TOKEN is the token of our bot
+
+
+client.on('message', message => {
+     var prefix = "$"
+     if (message.author.bot) return;
+if (message.content.startsWith(prefix + "uptime")) {
+    let uptime = client.uptime;
+
+    let days = 0;
+    let hours = 0;
+    let minutes = 0;
+    let seconds = 0;
+    let notCompleted = true;
+
+    while (notCompleted) {
+
+        if (uptime >= 8.64e+7) {
+
+            days++;
+            uptime -= 8.64e+7;
+
+        } else if (uptime >= 3.6e+6) {
+
+            hours++;
+            uptime -= 3.6e+6;
+
+        } else if (uptime >= 60000) {
+
+            minutes++;
+            uptime -= 60000;
+
+        } else if (uptime >= 1000) {
+            seconds++;
+            uptime -= 1000;
+
+        }
+
+        if (uptime < 1000)  notCompleted = false;
+
+    }
+
+    message.channel.send("`" + `${days} days, ${hours} hours, ${minutes} minutes , ${seconds} seconds` + "`");
+
+
+}
+});
+
+
+
+  client.login(process.env.BOT_TOKEN);
