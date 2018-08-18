@@ -1,9 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 client.on('ready', () => {
-
-
-client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
     console.log(`in ${client.guilds.size} servers `)
     console.log(`[Codes] ${client.users.size}`)
