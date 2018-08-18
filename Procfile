@@ -1,1 +1,1 @@
-worker: node mario.js
+worker: node bot.js
