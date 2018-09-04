@@ -35,23 +35,17 @@ if (message.content.startsWith(adminprefix + 'streaming')) {
 
 });
 
-var devs = ['373670599463272448'];
-client.on('message', message => {
-  if (message.author.bot) return;
-  if (!message.content.startsWith(adminprefix)) return;
-  let command = message.content.split(" ")[0];
-  command = command.slice(prefix.length);
-
-  let args = message.content.split(" ").slice(1);
-
-if (command == "embed") {
-    let say = new Discord.RichEmbed()
-    .setDescription(args.join("  "))
-    .setColor("RANDOM")
-    message.channel.sendEmbed(say);
-    message.delete();
-  }
-  });
+client.on("message", async message => {
+if(message.content.startsWith("-embed")) {
+if (message.author.id !== "373670599463272448") return;
+let args = message.content.split(" ").slice(1).join(" ")
+message.delete();
+var emb = new  Discord.RichEmbed()
+  .setColor('RANDOM')
+  .setDescription(args);
+message.channel.send(emb)
+}
+})
 
 
 
