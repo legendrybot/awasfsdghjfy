@@ -101,5 +101,18 @@ if (message.content.startsWith(adminprefix + "uptime")) {
 }
 });
 
+client.on("message", async message => {
+    if (message.author.bot) return;
+    if (message.channel.type === "dm") return;
+    let messageArray = message.content.split(" ");
+    let command = messageArray[0];
+
+if (command === `${adminprefix}join`) {
+        message.member.voiceChannel.join()
+    message.channel.send('Okey, joined your voice channel.')
+};
+
+});
+
 
   client.login(process.env.BOT_TOKEN);
