@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const prefix = "$";
 client.on('ready', () => {
-    console.log('I am ready!');
+    console.log(`I am ready! logged in as ${client.user.tag}`);
 });
 
 client.on('message', message => {
